@@ -79,6 +79,27 @@
   <div id="stockResult" class="result"></div>
 </section>
 
+<section id="expenses" class="view tool-page theme-expenses">
+  <button class="back" data-nav="home">← Dashboard</button>
+  <div class="money-head"><div class="page-head"><p class="eyebrow">MONEY TRACKER</p><h1>Expense Tracker</h1><p>Keep your business costs visible and under control.</p></div><div class="money-art"><span class="money-note">KSh</span><span class="money-coin">−</span></div></div>
+  <div class="card form"><label>Expense name <input id="expenseName" placeholder="e.g. Transport"></label><div class="two"><label>Amount <input id="expenseAmount" type="number" min="0" placeholder="500"></label><label>Category<select id="expenseCategory"><option>Stock</option><option>Transport</option><option>Rent</option><option>Food</option><option>Airtime</option><option>Utilities</option><option>Other</option></select></label></div><button class="primary" onclick="addExpense()">+ Add Expense</button></div>
+  <div id="expenseList"></div><div id="expenseSummary" class="result"></div>
+</section>
+
+<section id="target" class="view tool-page theme-target">
+  <button class="back" data-nav="home">← Dashboard</button>
+  <div class="money-head"><div class="page-head"><p class="eyebrow">MONEY TARGET</p><h1>Sales Target</h1><p>Set a goal and know what you need to sell today.</p></div><div class="money-art"><span class="money-note">KSh</span><span class="money-coin">→</span></div></div>
+  <div class="card form"><label>Daily profit target <input id="targetAmount" type="number" min="0" placeholder="3000"></label><label>Average profit per sale <input id="targetProfit" type="number" min="0" placeholder="100"></label><button class="primary" onclick="calcTarget()">Calculate My Target <span>→</span></button></div>
+  <div id="targetResult" class="result"></div>
+</section>
+
+<section id="insights" class="view tool-page theme-insights">
+  <button class="back" data-nav="home">← Dashboard</button>
+  <div class="money-head"><div class="page-head"><p class="eyebrow">BUSINESS INSIGHTS</p><h1>Today's Numbers</h1><p>Turn your records into a simple business picture.</p></div><div class="money-art"><span class="money-note">KSh</span><span class="money-coin">↗</span></div></div>
+  <div id="insightCards" class="insight-grid"></div>
+  <div class="card insight-message" id="insightMessage"></div>
+</section>
+
 <section id="receipt" class="view tool-page theme-receipt">
   <button class="back" data-nav="home">← Dashboard</button>
   <div class="money-head"><div class="page-head"><p class="eyebrow">MONEY TOOL</p><h1>Receipt Generator</h1><p>Create a clean receipt and share it on WhatsApp.</p></div><div class="money-art"><span class="money-note">KSh</span><span class="money-coin">✓</span></div></div>
