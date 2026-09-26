@@ -52,21 +52,21 @@
 
 <section id="profit" class="view">
   <button class="back" data-nav="home">← Dashboard</button>
-  <div class="page-head"><p class="eyebrow">CALCULATOR</p><h1>Profit Calculator</h1><p>See exactly what you make on every sale.</p></div>
+  <div class="money-head"><div class="page-head"><p class="eyebrow">MONEY TOOL</p><h1>Profit Calculator</h1><p>See exactly what you make on every sale.</p></div><div class="money-art"><span class="money-note">KSh</span><span class="money-coin">+</span></div></div>
   <div class="card form"><label>Buying price <input id="buyPrice" type="number" min="0" placeholder="80"></label><label>Selling price <input id="sellPrice" type="number" min="0" placeholder="120"></label><label>Quantity <input id="qty" type="number" min="1" value="1"></label><button class="primary" onclick="calcProfit()">Calculate Profit <span>→</span></button></div>
   <div id="profitResult" class="result"></div>
 </section>
 
 <section id="sales" class="view">
   <button class="back" data-nav="home">← Dashboard</button>
-  <div class="sectionTitle"><div><p class="eyebrow">SALES TRACKER</p><h1>Daily Sales</h1><p id="salesDate"></p></div><button class="small" onclick="clearSales()">Clear day</button></div>
+  <div class="money-head"><div class="sectionTitle"><div><p class="eyebrow">MONEY TRACKER</p><h1>Daily Sales</h1><p id="salesDate"></p></div><button class="small" onclick="clearSales()">Clear day</button></div><div class="money-art"><span class="money-note">KSh</span><span class="money-coin">+</span></div></div>
   <div class="card form"><label>Product / service <input id="saleName" placeholder="e.g. Samosa"></label><div class="two"><label>Sale amount <input id="saleAmount" type="number" min="0" placeholder="50"></label><label>Cost <input id="saleCost" type="number" min="0" placeholder="25"></label></div><button class="primary" onclick="addSale()">+ Add Sale</button></div>
   <div id="salesList"></div><div id="salesSummary" class="result"></div>
 </section>
 
 <section id="fees" class="view">
   <button class="back" data-nav="home">← Dashboard</button>
-  <div class="page-head"><p class="eyebrow">M-PESA</p><h1>M-Pesa Fee Calculator</h1><p>Get a quick transaction fee estimate.</p></div>
+  <div class="money-head"><div class="page-head"><p class="eyebrow">MONEY TOOL</p><h1>M-Pesa Fee Calculator</h1><p>Get a quick transaction fee estimate.</p></div><div class="money-art"><span class="money-note">KSh</span><span class="money-coin">↔</span></div></div>
   <div class="notice">Use this as an estimate and confirm the current Safaricom tariff before relying on it.</div>
   <div class="card form"><label>Amount <input id="feeAmount" type="number" min="0" placeholder="1000"></label><label>Transaction type<select id="feeType"><option value="send">Send money</option><option value="withdraw">Withdrawal</option><option value="deposit">Deposit</option></select></label><button class="primary" onclick="calcFee()">Calculate Fee <span>→</span></button></div>
   <div id="feeResult" class="result"></div>
@@ -74,21 +74,21 @@
 
 <section id="stock" class="view">
   <button class="back" data-nav="home">← Dashboard</button>
-  <div class="page-head"><p class="eyebrow">PRICING</p><h1>Stock & Pricing</h1><p>Find a selling price that protects your margin.</p></div>
+  <div class="money-head"><div class="page-head"><p class="eyebrow">MONEY TOOL</p><h1>Stock & Pricing</h1><p>Find a selling price that protects your margin.</p></div><div class="money-art"><span class="money-note">KSh</span><span class="money-coin">%</span></div></div>
   <div class="card form"><label>Purchase cost <input id="stockCost" type="number" min="0" placeholder="100"></label><label>Desired profit margin % <input id="margin" type="number" min="0" max="99" value="30"></label><label>Quantity <input id="stockQty" type="number" min="1" value="1"></label><button class="primary" onclick="calcStock()">Calculate Price <span>→</span></button></div>
   <div id="stockResult" class="result"></div>
 </section>
 
 <section id="receipt" class="view">
   <button class="back" data-nav="home">← Dashboard</button>
-  <div class="page-head"><p class="eyebrow">CUSTOMER RECEIPT</p><h1>Receipt Generator</h1><p>Create a clean receipt and share it on WhatsApp.</p></div>
+  <div class="money-head"><div class="page-head"><p class="eyebrow">MONEY TOOL</p><h1>Receipt Generator</h1><p>Create a clean receipt and share it on WhatsApp.</p></div><div class="money-art"><span class="money-note">KSh</span><span class="money-coin">✓</span></div></div>
   <div class="card form"><label>Business name <input id="bizName" placeholder="My Business"></label><label>Customer <input id="customer" placeholder="Customer name"></label><label>Item <input id="receiptItem" placeholder="Product"></label><div class="two"><label>Quantity <input id="receiptQty" type="number" value="1"></label><label>Price <input id="receiptPrice" type="number" placeholder="100"></label></div><button class="primary" onclick="makeReceipt()">Generate Receipt <span>→</span></button></div>
   <div id="receiptOutput"></div>
 </section>
 
 <section id="loan" class="view">
   <button class="back" data-nav="home">← Dashboard</button>
-  <div class="page-head"><p class="eyebrow">FINANCE</p><h1>Loan Calculator</h1><p>Estimate monthly repayments before you borrow.</p></div>
+  <div class="money-head"><div class="page-head"><p class="eyebrow">MONEY TOOL</p><h1>Loan Calculator</h1><p>Estimate monthly repayments before you borrow.</p></div><div class="money-art"><span class="money-note">KSh</span><span class="money-coin">%</span></div></div>
   <div class="card form"><label>Loan amount <input id="loanAmount" type="number" placeholder="60000"></label><label>Annual interest % <input id="loanRate" type="number" value="18"></label><label>Term (months) <input id="loanMonths" type="number" value="6"></label><button class="primary" onclick="calcLoan()">Calculate Repayment <span>→</span></button></div>
   <div id="loanResult" class="result"></div>
 </section>
