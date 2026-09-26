@@ -128,6 +128,35 @@ function makeReceipt(){var biz=bizName.value||'My Business',cust=customer.value|
 
 function shareReceipt(b,i,t){var msg=decodeURIComponent(b)+'%0AReceipt%0A'+decodeURIComponent(i)+'%0ATotal: KSh '+Number(t).toLocaleString()+'%0AThank you for your business!';window.open('https://wa.me/?text='+msg,'_blank');}
 
+function copyPaymentNumber(){
+ navigator.clipboard&&navigator.clipboard.writeText('0714082665').then(function(){
+  var b=document.querySelector('.copy-pay');if(b){var old=b.textContent;b.textContent='Copied';setTimeout(function(){b.textContent=old;},1400);}
+ }).catch(function(){});
+}
+
+function submitReportPayment(){
+ var code=(document.getElementById('reportCode').value||'').trim().toUpperCase();
+ if(code.length<6){
+  alert('Please enter the M-Pesa transaction code from your confirmation message.');
+  return;
+ }
+ localStorage.setItem('mbt-report-payment',JSON.stringify({code:code,submittedAt:new Date().toISOString(),verified:false}));
+ generateBusinessReport(code);
+}
+
+function generateBusinessReport(code){
+ var ts=todaySales(),te=todayExpenses();
+ var salesTotal=ts.reduce(function(a,x){return a+x.amount;},0);
+ var costTotal=ts.reduce(function(a,x){return a+x.cost;},0);
+ var expenseTotal=te.reduce(function(a,x){return a+x.amount;},0);
+ var profit=salesTotal-costTotal-expenseTotal;
+ var margin=salesTotal?(profit/salesTotal*100):0;
+ var reportDate=new Date().toLocaleDateString('en-KE',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ var items=ts.length?ts.map(function(x){return '<div class="report-row"><span>'+x.name+'</span><span>'+ksh(x.amount)+'</span></div>';}).join(''):'<p class="muted">No sales recorded today.</p>';
+ var expensesHtml=te.length?te.map(function(x){return '<div class="report-row"><span>'+x.name+' <small>'+x.category+'</small></span><span>'+ksh(x.amount)+'</span></div>';}).join(''):'<p class="muted">No expenses recorded today.</p>';
+ reportOutput.innerHTML='<div class="full-report" id="businessReport"><div class="report-brand"><div><b>M-Pesa Business Tools</b><small>Business Performance Report</small></div><span>'+reportDate+'</span></div><div class="report-verified">Payment reference: '+code+' · Pending manual verification</div><div class="report-summary"><div><span>Sales</span><b>'+ksh(salesTotal)+'</b></div><div><span>Costs</span><b>'+ksh(costTotal)+'</b></div><div><span>Expenses</span><b>'+ksh(expenseTotal)+'</b></div><div><span>Net profit</span><b>'+ksh(profit)+'</b></div><div><span>Margin</span><b>'+margin.toFixed(1)+'%</b></div><div><span>Transactions</span><b>'+ts.length+'</b></div></div><h3>Sales</h3>'+items+'<h3>Expenses</h3>'+expensesHtml+'<div class="report-actions"><button class="primary" onclick="window.print()">Print / Save PDF <span>→</span></button></div></div>';
+}
+
 function calcLoan(){var P=+loanAmount.value||0,r=(+loanRate.value||0)/100/12,n=+loanMonths.value||1,m=r?P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1):P/n;loanResult.innerHTML='<div class="stat">Estimated monthly payment<strong>'+ksh(m)+'</strong></div><div class="stat">Total repayment<strong>'+ksh(m*n)+'</strong></div><div class="stat">Estimated interest<strong>'+ksh(m*n-P)+'</strong></div><p class="muted">This assumes a standard reducing-balance monthly repayment and excludes fees or insurance.</p>';}
 
 var deferred;
