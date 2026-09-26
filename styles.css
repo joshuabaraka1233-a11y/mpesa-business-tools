@@ -4,13 +4,59 @@
 .dashboard-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-top:14px;margin-bottom:25px}.dashboard-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:30px}.dashboard-stat{max-width:none;margin:0;padding:22px}.dashboard-stat span,.dashboard-stat small{display:block;font-size:11px;color:#858c95}.dashboard-stat strong{display:block;font-family:Manrope;font-size:25px;margin:10px 0 5px;letter-spacing:-.5px}.dashboard-section{margin-top:6px}.dashboard-section h2{font-size:19px}
 @media(max-width:900px){.dashboard-head{display:block}.dashboard-stats{grid-template-columns:1fr 1fr}.dashboard-stat:first-child{grid-column:1/-1}.dashboard-stat{padding:18px}.dashboard-stat strong{font-size:22px}}@media(max-width:560px){.dashboard-stats{grid-template-columns:1fr}.dashboard-stat:first-child{grid-column:auto}}
 
-/* Money-focused visual language for business tools */
-.money-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin:14px 0 25px}
-.money-head .page-head,.money-head .sectionTitle{margin:0}
-.money-art{position:relative;width:150px;height:92px;flex:0 0 150px}
-.money-note{position:absolute;right:20px;top:4px;width:104px;height:58px;border:1px solid #b9dccd;border-radius:10px;background:linear-gradient(135deg,#eaf8f2,#d4f0e5);color:#087f5b;display:grid;place-items:center;font-family:Manrope;font-size:19px;font-weight:800;transform:rotate(-5deg);box-shadow:0 9px 20px rgba(8,127,91,.10)}
-.money-note:before,.money-note:after{content:"";position:absolute;border:1px solid #9acdb9;border-radius:50%;width:22px;height:22px;top:17px}
-.money-note:before{left:8px}.money-note:after{right:8px}
-.money-coin{position:absolute;right:2px;bottom:2px;width:45px;height:45px;border-radius:50%;background:#0b0f14;color:#fff;display:grid;place-items:center;font-family:Manrope;font-weight:800;font-size:13px;border:5px solid #d7eee5;box-shadow:0 7px 14px rgba(17,24,39,.13)}
-.money-head h1{margin-top:6px}
-@media(max-width:700px){.money-head{display:block}.money-art{display:none}}
+/* Distinct tool designs — sidebar/navigation stays unchanged */
+.tool-page{--accent:#172033;--accent-soft:#edf0f5;--accent-dark:#0d1320;--button:#172033}
+.tool-page .back{color:var(--accent)}
+.tool-page .eyebrow{color:var(--accent)}
+.tool-page .page-head h1,.tool-page .sectionTitle h1{letter-spacing:-1.2px}
+.tool-page .card{border:1px solid #e1e4e8;box-shadow:0 18px 45px rgba(20,28,40,.08)}
+.tool-page .form input:focus,.tool-page .form select:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 10%,transparent)}
+.tool-page .primary{background:var(--button)}
+.tool-page .primary:hover{background:var(--accent-dark)}
+.tool-page .small{color:var(--accent)}
+.tool-page .result .stat{border-left:4px solid var(--accent)}
+.theme-profit{--accent:#a56a00;--accent-soft:#fff4dc;--accent-dark:#774b00;--button:#182235}
+.theme-sales{--accent:#2463a8;--accent-soft:#eaf2fb;--accent-dark:#174574;--button:#2463a8}
+.theme-fees{--accent:#6b4bb8;--accent-soft:#f0ebfa;--accent-dark:#49317f;--button:#6b4bb8}
+.theme-stock{--accent:#c55a25;--accent-soft:#fff0e8;--accent-dark:#8e3e18;--button:#c55a25}
+.theme-receipt{--accent:#344054;--accent-soft:#eef1f5;--accent-dark:#1f2937;--button:#344054}
+.theme-loan{--accent:#9b3d4d;--accent-soft:#faecef;--accent-dark:#702a36;--button:#9b3d4d}
+
+/* Each page gets its own visual header treatment */
+.tool-page .money-head{position:relative;padding:24px 26px 22px;border-radius:18px;margin:14px 0 20px;background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 15%,#fff);overflow:hidden}
+.tool-page .money-head:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-100px;background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.tool-page .money-head .page-head{position:relative;z-index:1}
+.tool-page .money-head .eyebrow{color:var(--accent)}
+.tool-page .money-head h1{font-size:34px}
+.tool-page .money-head .money-art{z-index:2}
+.tool-page .money-note{background:#fff;border-color:color-mix(in srgb,var(--accent) 25%,#fff);color:var(--accent)}
+.tool-page .money-coin{background:var(--accent);border-color:#fff}
+
+/* Profit: premium dark calculator */
+.theme-profit .card.form{border-top:4px solid #a56a00}
+.theme-profit .primary{font-family:Manrope}
+
+/* Sales: ledger feel */
+.theme-sales .card.form{border-top:4px solid #2463a8}
+.theme-sales .sale{border-left:4px solid #2463a8}
+
+/* Fees: transaction feel */
+.theme-fees .notice{background:#f4f0fb;border-color:#ddd3f0;color:#57408b}
+.theme-fees .card.form{border-top:4px solid #6b4bb8}
+
+/* Stock: retail/pricing feel */
+.theme-stock .card.form{border-top:4px solid #c55a25}
+
+/* Receipt: paper/document feel */
+.theme-receipt .card.form{border-top:4px solid #344054}
+.theme-receipt .receipt{border-top:5px solid #344054;box-shadow:0 18px 35px rgba(31,41,55,.10)}
+
+/* Loan: finance feel */
+.theme-loan .card.form{border-top:4px solid #9b3d4d}
+
+/* Remove old green content accents without touching the navigation */
+.tool-page .qa-icon,.tool-page .tool .icon{color:var(--accent)}
+@media(max-width:700px){
+.tool-page .money-head{padding:20px}
+.tool-page .money-head h1{font-size:28px}
+}
