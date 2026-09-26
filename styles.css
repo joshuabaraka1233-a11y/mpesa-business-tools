@@ -60,3 +60,20 @@
 .tool-page .money-head{padding:20px}
 .tool-page .money-head h1{font-size:28px}
 }
+
+/* New money features */
+.theme-expenses{--accent:#b14d3b;--accent-soft:#fff0ed;--accent-dark:#7f3428;--button:#b14d3b}
+.theme-target{--accent:#176b61;--accent-soft:#e8f5f2;--accent-dark:#104c45;--button:#176b61}
+.theme-insights{--accent:#5546a8;--accent-soft:#efedfb;--accent-dark:#3b3179;--button:#5546a8}
+.theme-expenses .card.form,.theme-target .card.form,.theme-insights .card.form{border-top:4px solid var(--accent)}
+.theme-expenses .primary,.theme-target .primary,.theme-insights .primary{background:var(--button)}
+.expense-row{border-left:4px solid #b14d3b}
+.insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:940px;margin-bottom:14px}
+.insight-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:19px;box-shadow:var(--shadow)}
+.insight-card span,.insight-card small{display:block;color:var(--muted);font-size:11px}
+.insight-card strong{display:block;font-family:Manrope;font-size:21px;margin:9px 0 5px;letter-spacing:-.4px}
+.insight-message{max-width:940px;border-left:4px solid #5546a8}
+.insight-message strong{font-family:Manrope;font-size:14px}
+.insight-message p{font-size:12px;line-height:1.6;color:var(--muted);margin:7px 0 0}
+@media(max-width:700px){.insight-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.insight-grid{grid-template-columns:1fr}}
