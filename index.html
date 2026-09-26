@@ -35,25 +35,18 @@
 
 <main>
 <section id="home" class="view active">
-  <div class="welcome">
-    <div><p class="eyebrow">BUSINESS DASHBOARD</p><h1>Run your business with clarity.</h1><p class="subtext">Your everyday calculators, sales and receipts — all in one place.</p></div>
+  <div class="page-head dashboard-head">
+    <div><p class="eyebrow">DASHBOARD</p><h1>Business Dashboard</h1><p>Manage your sales, profit and everyday business calculations.</p></div>
     <div class="date-chip" id="homeDate"></div>
   </div>
 
-  <div class="overview">
-    <div class="overview-card primary-overview"><span>Today's Sales</span><strong id="homeSales">KSh 0.00</strong><small>Recorded today</small></div>
-    <div class="overview-card"><span>Today's Profit</span><strong id="homeProfit">KSh 0.00</strong><small>After recorded costs</small></div>
-    <div class="overview-card"><span>Transactions</span><strong id="homeTransactions">0</strong><small>Sales recorded</small></div>
+  <div class="dashboard-stats">
+    <div class="card dashboard-stat"><span>Today's Sales</span><strong id="homeSales">KSh 0.00</strong><small>Recorded today</small></div>
+    <div class="card dashboard-stat"><span>Today's Profit</span><strong id="homeProfit">KSh 0.00</strong><small>After recorded costs</small></div>
+    <div class="card dashboard-stat"><span>Transactions</span><strong id="homeTransactions">0</strong><small>Sales recorded</small></div>
   </div>
 
-  <div class="section-heading"><div><p class="eyebrow">QUICK ACTIONS</p><h2>What do you need?</h2></div></div>
-  <div class="quick-grid">
-    <button class="quick-action green-action" data-nav="profit"><span class="qa-icon">↗</span><div><strong>Calculate Profit</strong><small>Know your margin instantly</small></div><b>→</b></button>
-    <button class="quick-action" data-nav="sales"><span class="qa-icon">▥</span><div><strong>Add a Sale</strong><small>Record today's transaction</small></div><b>→</b></button>
-    <button class="quick-action" data-nav="receipt"><span class="qa-icon">▤</span><div><strong>Create Receipt</strong><small>Send a customer receipt</small></div><b>→</b></button>
-  </div>
-
-  <div class="section-heading tools-heading"><div><p class="eyebrow">BUSINESS TOOLS</p><h2>Everything you need</h2></div></div>
+  <div class="section-heading dashboard-section"><div><p class="eyebrow">QUICK ACTIONS</p><h2>Business Tools</h2></div></div>
   <div class="grid" id="toolGrid"></div>
 </section>
 
