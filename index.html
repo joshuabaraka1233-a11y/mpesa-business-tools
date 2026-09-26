@@ -52,20 +52,9 @@
 
 <section id="profit" class="view">
   <button class="back" data-nav="home">← Dashboard</button>
-  <div class="page-head calculator-head"><div><p class="eyebrow">BUSINESS TOOL</p><h1>Profit Calculator</h1><p>Know your margin before you sell.</p></div><div class="page-tag">Profit & Margin</div></div>
-  <div class="calculator-layout">
-    <div class="card form calculator-card">
-      <div class="form-title"><span class="form-badge">01</span><div><strong>Sale details</strong><small>Enter your buying and selling figures.</small></div></div>
-      <label>Buying price <input id="buyPrice" type="number" min="0" placeholder="80"></label>
-      <label>Selling price <input id="sellPrice" type="number" min="0" placeholder="120"></label>
-      <label>Quantity <input id="qty" type="number" min="1" value="1"></label>
-      <button class="primary" onclick="calcProfit()">Calculate Profit <span>→</span></button>
-    </div>
-    <div class="calculator-side">
-      <div class="side-note"><span class="note-mark">%</span><div><strong>Protect your margin</strong><p>Use your real purchase cost to see how much each sale contributes to your business.</p></div></div>
-      <div id="profitResult" class="result"></div>
-    </div>
-  </div>
+  <div class="page-head"><p class="eyebrow">CALCULATOR</p><h1>Profit Calculator</h1><p>See exactly what you make on every sale.</p></div>
+  <div class="card form"><label>Buying price <input id="buyPrice" type="number" min="0" placeholder="80"></label><label>Selling price <input id="sellPrice" type="number" min="0" placeholder="120"></label><label>Quantity <input id="qty" type="number" min="1" value="1"></label><button class="primary" onclick="calcProfit()">Calculate Profit <span>→</span></button></div>
+  <div id="profitResult" class="result"></div>
 </section>
 
 <section id="sales" class="view">
