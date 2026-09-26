@@ -99,6 +99,21 @@
   <div class="money-head"><div class="page-head"><p class="eyebrow">BUSINESS INSIGHTS</p><h1>Today's Numbers</h1><p>Turn your records into a simple business picture.</p></div><div class="money-art"><span class="money-note">KSh</span><span class="money-coin">↗</span></div></div>
   <div id="insightCards" class="insight-grid"></div>
   <div class="card insight-message" id="insightMessage"></div>
+  <div class="card report-card">
+    <div class="report-top">
+      <div><p class="eyebrow">PAID BUSINESS REPORT</p><h2>Full Business Report</h2><p>Get a printable report of your recorded sales, expenses, profit and key numbers.</p></div>
+      <div class="report-price">KSh 100</div>
+    </div>
+    <div class="payment-box">
+      <strong>Pay KSh 100 via M-Pesa</strong>
+      <p>Send KSh 100 to <b>0714082665</b></p>
+      <button class="copy-pay" onclick="copyPaymentNumber()">Copy number</button>
+      <label>Enter your M-Pesa transaction code <input id="reportCode" type="text" maxlength="20" placeholder="e.g. QAB123XYZ"></label>
+      <button class="primary report-btn" onclick="submitReportPayment()">I Have Paid — Generate Report <span>→</span></button>
+      <small class="payment-note">Payment is manually verified. Keep your M-Pesa confirmation message. Your report should only be treated as unlocked after the payment has been confirmed.</small>
+    </div>
+    <div id="reportOutput"></div>
+  </div>
 </section>
 
 <section id="receipt" class="view tool-page theme-receipt">
