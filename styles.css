@@ -77,3 +77,5 @@
 .insight-message p{font-size:12px;line-height:1.6;color:var(--muted);margin:7px 0 0}
 @media(max-width:700px){.insight-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:500px){.insight-grid{grid-template-columns:1fr}}
+
+.content-page{max-width:760px;margin:0 auto;padding:60px 24px;color:var(--ink);line-height:1.7}.content-page>a{color:var(--green);font-weight:700;text-decoration:none}.content-page h1{font-family:Manrope;font-size:38px;line-height:1.15;margin:12px 0 18px}.content-page h2{font-family:Manrope;font-size:20px;margin:32px 0 8px}.content-page p{color:var(--muted);font-size:15px}.content-page a{color:var(--green)}.dashboard-links{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}.dashboard-links a{color:var(--muted);text-decoration:none}.dashboard-links a:hover{color:var(--ink)}.dashboard-links span{margin-left:auto}@media(max-width:600px){.content-page{padding:35px 18px}.content-page h1{font-size:30px}.dashboard-links span{width:100%;margin-left:0}}
